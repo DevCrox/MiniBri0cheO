@@ -25,7 +25,7 @@ export const TRANSLATIONS = {
     },
     menu: {
       specialties: "Our Specialties",
-      title: "La Pâtisserie",
+      title: "Pastry",
       subtitle: "Every creation is a masterpiece, made with the freshest local ingredients and artistic devotion.",
       categories: {
         all: "All Delights",
@@ -73,10 +73,10 @@ export const TRANSLATIONS = {
     testimonials: {
       badge: "Noté 4.2/5 étoiles par nos voisins",
       title: "L'Amour des Clients",
-      readAll: "Lire plus de 245 avis sur Google Maps"
+      readAll: "Lire tous les 245+ avis sur Google Maps"
     },
     menu: {
-      specialties: "Nos Spécialités",
+      specialties: "Nos spécialités",
       title: "La Pâtisserie",
       subtitle: "Chaque création est un chef-d'œuvre, réalisé avec les ingrédients locaux les plus frais et une dévotion artistique.",
       categories: {
@@ -125,7 +125,7 @@ export const TRANSLATIONS = {
     testimonials: {
       badge: "تقييم 4.2/5 نجوم من جيراننا",
       title: "حب العملاء",
-      readAll: "اقرأ أكثر من 245 مراجعة على خرائط جوجل"
+      readAll: "اقرأ جميع المراجعات الـ 245+ على خرائط جوجل"
     },
     menu: {
       specialties: "تخصصاتنا",
@@ -159,36 +159,80 @@ export const TRANSLATIONS = {
   }
 };
 
-// Data getters based on language to keep constants.ts clean or replace it
 export const getTestimonials = (lang: 'en' | 'fr' | 'ar'): Testimonial[] => {
-  // Simplified for demo: In a real app, these would be fully translated.
-  // Using English structure but potentially could map text if strictly needed.
-  // For now we keep the reviews in English/Mixed as they are authentic User Generated Content usually.
-  // But purely for the demo interface, I will assume we might want to translate them or leave them.
-  // I will leave them as is for authenticity but headers change.
-  return [
+  const content = {
+    en: [
       {
         id: '1',
-        name: "Fatima Z.",
+        name: "Verified Customer",
         rating: 5,
-        text: lang === 'ar' ? "أفضل كعكة عيد ميلاد طلبتها على الإطلاق! لم تكن جميلة فحسب، بل كانت الكريمة خفيفة وطازجة." : "The best birthday cake I've ever ordered! Not only was it beautiful, but the cream was light and fresh. A true gem in Riad Salam.",
-        date: "2 weeks ago"
+        text: "The security guard gave me a warm welcome at the entrance, and the waitresses served me quickly and were all smiles. The products are of excellent quality and the prices are low. The display cases are very clean.",
+        date: "Recently"
       },
       {
         id: '2',
-        name: "Karim M.",
+        name: "Verified Customer",
         rating: 5,
-        text: lang === 'ar' ? "طقوسي الصباحية تشمل الكرواسون والميني بريوش. دائماً دافئة ودائماً خدمة ودودة." : "My morning ritual involves their croissants and mini brioches. Always warm, always friendly service. Highly recommended.",
-        date: "1 month ago"
+        text: "I was given some Moroccan pastries from there. They were absolutely delicious! I'm noting down the address so I can go there next time I'm in Agadir.",
+        date: "Recently"
       },
       {
         id: '3',
-        name: "Sarah L.",
-        rating: 4,
-        text: lang === 'ar' ? "طلبت كعكة مخصصة لذكرى زواجي. اهتموا بكل التفاصيل. لذيذة وأنيقة." : "Ordered a custom cake for my wedding anniversary. They paid attention to every detail. Delicious and elegant.",
-        date: "3 months ago"
+        name: "Verified Customer",
+        rating: 5,
+        text: "An exceptional experience at this pastry shop! Their products are high-quality and varied in shapes and flavors. The pastries are fresh and delicious, and you can truly feel the craftsmanship in every bite.",
+        date: "Recently"
       }
-  ];
+    ],
+    fr: [
+      {
+        id: '1',
+        name: "Client Vérifié",
+        rating: 5,
+        text: "Le gardien m'a réservé un accueil chaleureux à l'entrée, et les serveuses m'ont servi rapidement avec le sourire. Les produits sont d'excellente qualité et les prix sont bas. Les vitrines sont très propres.",
+        date: "Récemment"
+      },
+      {
+        id: '2',
+        name: "Client Vérifié",
+        rating: 5,
+        text: "On m'a offert des pâtisseries marocaines venant de là-bas. Elles étaient absolument délicieuses ! Je note l'adresse pour y aller la prochaine fois que je serai à Agadir.",
+        date: "Récemment"
+      },
+      {
+        id: '3',
+        name: "Client Vérifié",
+        rating: 5,
+        text: "Une expérience exceptionnelle dans cette pâtisserie ! Leurs produits sont de haute qualité et variés en formes et en saveurs. Les pâtisseries sont fraîches et délicieuses, et on sent vraiment le savoir-faire dans chaque bouchée.",
+        date: "Récemment"
+      }
+    ],
+    ar: [
+      {
+        id: '1',
+        name: "عميل موثوق",
+        rating: 5,
+        text: "استقبلني حارس الأمن بترحيب حار عند المدخل، وخدمتني النادلات بسرعة بابتسامة عريضة. المنتجات ذات جودة ممتازة والأسعار منخفضة. واجهات العرض نظيفة جداً.",
+        date: "مؤخراً"
+      },
+      {
+        id: '2',
+        name: "عميل موثوق",
+        rating: 5,
+        text: "لقد تم إهدائي بعض الحلويات المغربية من هناك. كانت لذيذة للغاية! سأقوم بتدوين العنوان حتى أتمكن من الذهاب إلى هناك في المرة القادمة التي أكون فيها في أكادير.",
+        date: "مؤخراً"
+      },
+      {
+        id: '3',
+        name: "عميل موثوق",
+        rating: 5,
+        text: "تجربة استثنائية في متجر الحلويات هذا! منتجاتهم عالية الجودة ومتنوعة في الأشكال والنكهات. المعجنات طازجة ولذيذة، ويمكنك حقاً الشعور بالحرفية في كل لقمة.",
+        date: "مؤخراً"
+      }
+    ]
+  };
+
+  return content[lang];
 };
 
 export const getMenuItems = (lang: 'en' | 'fr' | 'ar'): MenuItem[] => {
@@ -202,7 +246,6 @@ export const getMenuItems = (lang: 'en' | 'fr' | 'ar'): MenuItem[] => {
       description: isAr ? "طبقات من الفانيليا. مثالية للاحتفالات." : (isFr ? "Couches de vanille. Parfait pour les célébrations." : "Layers of vanilla. Perfect for celebrations."),
       category: 'cake',
       image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz3LnfRkszmNQUqo2WPdCqO-kUvomCoW12AsmtHVfNmsiVsclPfyNM0ZtvguHANmw83U04P4tDLKutsKNNsGmeGQ1qxf7Fom6S-nobKJQd_IVB2pN4i-G4lr_P7xc-yw2dLTW6Bxg=w172-h224-p-k-no",
-      tags: isAr ? ["الأكثر مبيعاً"] : (isFr ? ["Meilleure Vente"] : ["Best Seller"])
     },
     {
       id: 'c2',
@@ -210,36 +253,60 @@ export const getMenuItems = (lang: 'en' | 'fr' | 'ar'): MenuItem[] => {
       description: isAr ? "كعكة أنيقة متعددة الطبقات بكريمة الفانيليا ولمسات ذهبية." : (isFr ? "Gâteau élégant à plusieurs étages avec crème à la vanille." : "Elegant multi-tier cake with vanilla bean cream and edible gold leaf accents."),
       category: 'cake',
       image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSxATF0vsV6PvFsnsIsmFCYmHtL-Pn-_hYYVP5zJTqSUEUwn17LoIgDtUVaKc7VtetNKieuNWOAd8uMaM1BAIlU5M8Iyjdhd7pLBX2-fzXtqByrXnf_L6abWI2XMSzXL-TiYzUQB=w172-h224-p-k-no",
-      tags: isAr ? ["حفلات زفاف"] : (isFr ? ["Mariage"] : ["Wedding"])
+    },
+    {
+      id: 'c3',
+      title: isAr ? "كعكة البحر" : (isFr ? "Gâteau theme Ocean" : "Ocean Cake"),
+      description: isAr ? "كعكة أنيقة متعددة الطبقات بكريمة الفانيليا ولمسات ذهبية." : (isFr ? "Gâteau élégant à plusieurs étages avec crème à la vanille." : "Elegant multi-tier cake with vanilla bean cream and edible gold leaf accents."),
+      category: 'cake',
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSzU5gINRPVJlL33ogTndbhrmgAAfBhg4a6IzoqNh18RDUhhl3W3IJNMI1wvhOv0JdHxXpTL-CzDr9oP3ZEz32-jUNgX54vEZaJ1RjNSWZCPBaFYCbCsit7BVWpeDf_CJ1rV494i=w172-h224-p-k-no",
     },
     {
       id: 'm1',
-      title: isAr ? "شباكية كلاسيكية" : "Classic Chebakia",
+      title: isAr ? "صينية الكيك" : (isFr ? "Plateau de gateaux" : "Plate of cakes"),
       description: isAr ? "حلوى مغربية تقليدية بالسمسم والعسل." : (isFr ? "Biscuits marocains traditionnels au sésame, miel et eau de rose." : "Traditional Moroccan sesame cookies coated in honey and rose water."),
       category: 'moroccan',
-      image: "https://picsum.photos/id/835/600/400",
-      tags: isAr ? ["رمضان"] : (isFr ? ["Spécial Ramadan"] : ["Ramadan Special"])
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSwiVA7qSsISORz9HgV_d4SjmsIY3dIlcWAZxHyxE1S3DRYFwtTR-LI5EwVqYrD1DbsA2Mng6c7bJekJDatLYcP3vvo4EOmc8YwPBDEjfUG6rIVrzf_fmJU6QacwxrkClxpJDO7egA=w172-h224-p-k-no",
+      tags: isAr ? ["أفضل قيمة"] : (isFr ? ["Meilleure Valeur"] : ["Best Value"])
     },
     {
       id: 'm2',
-      title: isAr ? "بريوات اللوز" : (isFr ? "Briouat aux Amandes" : "Almond Briouat"),
-      description: isAr ? "معجنات مقرمشة محشوة بمعجون اللوز ومغموسة في العسل." : (isFr ? "Pâtisseries croustillantes farcies à la pâte d'amande et trempées dans le miel." : "Crispy triangular pastries filled with almond paste and dipped in honey."),
+      title: isAr ? "ملوي/مسمن" : (isFr ? "Meloui/Msemen" : "Meloui/Msemen"),
+      description: isAr ? "فطائر مغربية تقليدية مورقة ومقرمشة، تقدم عادة مع الزبدة والعسل." : (isFr 
+        ? "Crêpes marocaines traditionnelles feuilletées et croustillantes, généralement servies avec du beurre et du miel." 
+        : "Traditional Moroccan layered flatbreads, flaky and crispy, typically served with butter and honey."
+      ),
       category: 'moroccan',
-      image: "https://picsum.photos/id/431/600/400"
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyKdDFTyWX3ylVN3a8qGxDqkmU-1pAEYI-vkHnNoc5lxZ-4iOaoXu0qXMrHbH0nHifmCURAAuWne2-1aCjhda3NNgNKeBUIyooKz3puh_o8GzbybONic35eyTWGxMQmO0W2RI8EMQ=w172-h224-p-k-no"
+    },
+    {
+      id: 'm3',
+      title: isAr ? "بسكويت صغير" : (isFr ? "Petits Biscuits" : "Small Biscuits"),
+      description: isAr ? "مجموعة متنوعة من الحلويات المغربية الصغيرة المقرمشة، مثالية لتقديمها مع الشاي." 
+    : (isFr 
+        ? "Une variété de petits biscuits marocains croquants, parfaits pour accompagner le thé." 
+        : "A variety of small, crunchy Moroccan biscuits, perfect for serving with tea."
+      ),
+      category: 'moroccan',
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSy_j_dXulvmXiCrshhdBXSBn9pEQdSApWkwtU4NXmLelgHxfhAdKh5QdNH7F9NF-v-L68ZFz9t_oGQymUAjWB-zJAoegLsKBNcSzZ0oIyWGbtc6k4ClR9vvSUXs1rP8PWUZ8oKU5A=w172-h224-p-k-no"
     },
     {
       id: 'f1',
       title: isAr ? "كرواسون بالزبدة" : (isFr ? "Croissant au Beurre" : "Butter Croissant"),
       description: isAr ? "هش، بالزبدة، وذهبي. يخبز طازجاً كل صباح." : (isFr ? "Feuilleté, au beurre et doré. Cuit frais tous les matins." : "Flaky, buttery, and golden. Baked fresh every morning at 6 AM."),
       category: 'french',
-      image: "https://picsum.photos/id/488/600/400"
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSyONAKanNUjHJRERq1NCaWXOy_S_zV7_kZIbmbH_mCqXU31aKzF-zahqwGuXItppMzK2Moh69LDIDIm79siFfovai7kuhWxOMv8sZqhk9CfnHeYaAeakAdBYaL8QR_gppvK7KvCoA=w172-h224-p-k-no"
     },
     {
       id: 'f2',
-      title: isAr ? "إكلير بالشوكولاتة" : (isFr ? "Éclair au Chocolat" : "Éclair au Chocolat"),
-      description: isAr ? "عجينة الشو محشوة بكريمة الشوكولاتة الغنية." : (isFr ? "Pâte à choux fourrée à la crème au chocolat riche." : "Choux pastry filled with rich chocolate cream and topped with fondant icing."),
+      title: isAr ? "سويسري/فانيليا/خبز محشو" : (isFr ? "Pain Suisse/Vanille/Fourré" : "Swiss Bread/Vanilla/Stuffed"),
+      description: isAr ? "بريوش ناعم محشو بكريمة الحلواني بالفانيليا ورقائق الشوكولاتة." 
+        : (isFr 
+            ? "Brioche moelleuse fourrée à la crème pâtissière à la vanille et aux pépites de chocolat." 
+            : "Soft brioche pastry filled with vanilla pastry cream and chocolate chips."
+          ),
       category: 'french',
-      image: "https://picsum.photos/id/1062/600/400"
+      image: "https://lh3.googleusercontent.com/gps-cs-s/AG0ilSz74OqNKkMTux11yo4XJOMMuTvgtxvBWv0J51G4In7tyCEfU-6mVLFFwRzuLnOOb4GT0GE1WDdYBraOEtBznQSqQlsVxO540glHr9ap0-EwXsHMHn_03kWcXmjDbYVh3Mz5XAZFEQ=w172-h224-p-k-no"
     }
   ];
 };

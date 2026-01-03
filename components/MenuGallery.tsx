@@ -74,9 +74,6 @@ const MenuGallery: React.FC = () => {
                 <p className="text-gray-500 mb-4 line-clamp-3 text-sm leading-relaxed">{item.description}</p>
                 <div className="flex items-center justify-between mt-4">
                   <span className="text-brand-gold font-semibold text-sm uppercase tracking-wider">{item.category}</span>
-                  <button className="text-brand-brown text-sm font-bold border-b-2 border-brand-gold/30 hover:border-brand-gold transition-colors">
-                    {t('menu.inquire')}
-                  </button>
                 </div>
               </div>
             </div>

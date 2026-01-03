@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Cake} from 'lucide-react';
+import { Menu, X, Phone, Cake } from 'lucide-react';
 import { BUSINESS_INFO } from '../constants';
 import { useLanguage } from '../LanguageContext';
 import { Language } from '../types';
@@ -27,7 +27,7 @@ const Navbar: React.FC = () => {
   const languages: { code: Language; label: string }[] = [
     { code: 'en', label: 'EN' },
     { code: 'fr', label: 'FR' },
-    { code: 'ar', label: 'عربي' },
+    { code: 'ar', label: 'العربية' },
   ];
 
   return (
