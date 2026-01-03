@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, Cake, Globe } from 'lucide-react';
+import { Menu, X, Phone, Cake} from 'lucide-react';
 import { BUSINESS_INFO } from '../constants';
 import { useLanguage } from '../LanguageContext';
 import { Language } from '../types';
